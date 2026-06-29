@@ -2,6 +2,7 @@ import express from "express";
 import session from "express-session";
 import dotenv from "dotenv";
 import cors from "cors";
+import MongoStore from "connect-mongo";
 import mongoose from "mongoose";
 import passport from "./auth/auth.ts";
 import userRoutes from "./routes/userRoutes.ts";
@@ -33,6 +34,10 @@ app.use(session({
     secret: process.env.SESSION_SECRET || 'ai-productivity-companion-secret',
     resave: false,
     saveUninitialized: false,
+    store: MongoStore.create({
+        mongoUrl: process.env.MONGODB_URI,
+        collectionName: "sessions",
+    }),
     cookie: {
         secure: process.env.NODE_ENV === "production",
         sameSite: "lax",
