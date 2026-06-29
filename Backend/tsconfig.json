@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "strict": true,
+        "noEmit": true,
+        "allowImportingTsExtensions": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "types": [
+            "node",
+            "express",
+            "express-session",
+            "passport"
+        ]
+    },
+    "include": [
+        "**/*.ts",
+        "**/*.d.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+  "name": "mytaskmate",
+  "private": true,
+  "scripts": {
+    "build": "npm ci --include=dev --prefix Frontend && npm run build --prefix Frontend && npm ci --include=dev --prefix Backend",
+    "start": "npm start --prefix Backend",
+    "typecheck": "npm run typecheck --prefix Backend"
+  }
+}
