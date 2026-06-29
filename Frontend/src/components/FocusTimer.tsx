@@ -143,16 +143,16 @@ const FocusTimer = () => {
       </section>
 
       {sessionOpen && (
-        <div className="fixed inset-0 z-50 grid place-items-center bg-slate-950/80 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label={`${focusName} focus timer`}>
-          <section className="w-full max-w-2xl rounded-lg border border-violet-300/30 bg-[#fffdfb] p-7 text-center shadow-2xl dark:bg-slate-950 sm:p-10">
+        <div className="fixed inset-0 z-50 grid place-items-center overflow-y-auto bg-slate-950/80 p-3 backdrop-blur-sm sm:p-4" role="dialog" aria-modal="true" aria-label={`${focusName} focus timer`}>
+          <section className="max-h-[calc(100svh-1.5rem)] w-full max-w-2xl overflow-y-auto rounded-lg border border-violet-300/30 bg-[#fffdfb] p-4 text-center shadow-2xl dark:bg-slate-950 sm:p-10">
             <div className="mx-auto flex max-w-md items-center justify-between gap-4">
               <div className="text-left"><p className="text-xs font-black uppercase text-violet-500">Focus session</p><h2 className="mt-1 text-2xl font-black text-slate-950 dark:text-white">{focusName}</h2></div>
               <span className={`rounded-full px-3 py-1 text-xs font-black ${completed ? 'bg-emerald-100 text-emerald-700' : running ? 'bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-200' : 'bg-amber-100 text-amber-700'}`}>{completed ? 'Complete' : running ? 'Focusing' : 'Paused'}</span>
             </div>
 
-            <div className="mx-auto mt-10 grid h-64 w-64 place-items-center rounded-full border-[14px] border-violet-200 bg-white shadow-inner dark:border-violet-500/25 dark:bg-slate-900 sm:h-72 sm:w-72">
+            <div className="mx-auto mt-7 grid aspect-square w-[min(16rem,74vw)] place-items-center rounded-full border-[12px] border-violet-200 bg-white shadow-inner dark:border-violet-500/25 dark:bg-slate-900 sm:mt-10 sm:w-72 sm:border-[14px]">
               <div>
-                <p className="font-mono text-6xl font-black text-slate-950 dark:text-white sm:text-7xl">{formatTime(secondsLeft)}</p>
+                <p className="font-mono text-5xl font-black text-slate-950 dark:text-white min-[380px]:text-6xl sm:text-7xl">{formatTime(secondsLeft)}</p>
                 <p className="mt-3 text-sm font-bold text-slate-500">{completed ? 'Session complete' : running ? 'Stay with this one thing' : 'Your time is held'}</p>
               </div>
             </div>
@@ -160,7 +160,7 @@ const FocusTimer = () => {
             {completed ? (
               <div className="mt-10"><p className="text-lg font-black text-emerald-700 dark:text-emerald-300">Nice work. That block is complete.</p><button type="button" onClick={finish} className="mt-5 rounded-lg bg-emerald-600 px-8 py-3 font-black text-white">Done</button></div>
             ) : (
-              <div className="mt-10 flex flex-wrap justify-center gap-3">
+              <div className="mt-7 grid gap-3 min-[420px]:flex min-[420px]:flex-wrap min-[420px]:justify-center sm:mt-10">
                 <button type="button" onClick={togglePause} className="min-w-32 rounded-lg bg-violet-600 px-6 py-3 font-black text-white">{running ? 'Pause' : 'Resume'}</button>
                 <button type="button" onClick={restart} className="rounded-lg border border-violet-200 px-6 py-3 font-black text-violet-700 dark:border-slate-700 dark:text-violet-200">Restart</button>
                 <button type="button" onClick={finish} className="rounded-lg border border-rose-200 px-6 py-3 font-black text-rose-600 dark:border-rose-900 dark:text-rose-300">End session</button>

@@ -44,7 +44,7 @@ const HabitsView = () => {
     <div className="grid gap-7">
       <section className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h2 className="text-3xl font-black text-slate-950 dark:text-white">Weekly Habits Tracker</h2>
+          <h2 className="text-2xl font-black text-slate-950 dark:text-white sm:text-3xl">Weekly Habits Tracker</h2>
           <p className="mt-1 text-slate-500 dark:text-slate-400">Daily and long-term habits with checklists, streaks, and completion scores.</p>
         </div>
         <button type="button" onClick={() => setFormOpen((open) => !open)} className="rounded-lg bg-violet-500 px-5 py-3 font-black text-white">{formOpen ? 'Cancel' : 'New Habit'}</button>
@@ -76,7 +76,7 @@ const HabitsView = () => {
           </div>
         )}
         {habits.map((habit) => (
-          <article key={habit.id} className="rounded-lg border border-violet-100 bg-white/80 p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <article key={habit.id} className="rounded-lg border border-violet-100 bg-white/80 p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900 sm:p-6">
             <div className="flex flex-wrap items-center justify-between gap-4">
               <div>
                 <p className="text-xs font-black uppercase text-violet-500">{habit.cadence}</p>
@@ -92,9 +92,9 @@ const HabitsView = () => {
                 </select>
               </div>
             </div>
-            <div className="mt-6 grid grid-cols-7 gap-2">
+            <div className="mt-6 grid grid-cols-7 gap-1 sm:gap-2">
               {habit.days.map((done, index) => (
-                <label key={`${habit.id}-${index}`} className={`grid min-w-0 gap-2 rounded-lg p-3 text-center text-sm font-black ${done ? 'bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-200' : 'bg-[#fbf7f2] text-slate-500 dark:bg-slate-950 dark:text-slate-400'}`}>
+                <label key={`${habit.id}-${index}`} className={`grid min-w-0 gap-2 rounded-lg px-1 py-3 text-center text-xs font-black sm:p-3 sm:text-sm ${done ? 'bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-200' : 'bg-[#fbf7f2] text-slate-500 dark:bg-slate-950 dark:text-slate-400'}`}>
                   {days[index]}
                   <input type="checkbox" checked={done} onChange={(event) => toggleDay(habit, index, event.target.checked)} className="mx-auto h-5 w-5 accent-violet-500" />
                 </label>

@@ -38,8 +38,8 @@ const Header = ({ onAddTask, onToggleTheme, theme, onToggleSidebar, user, onLogo
   )
 
   return (
-    <header className="sticky top-0 z-20 flex min-h-20 items-center justify-between border-b border-violet-100 bg-white/85 px-2 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/90 sm:px-6">
-      <div className="flex items-center gap-2 sm:gap-4">
+    <header className="sticky top-0 z-20 flex min-h-16 items-center justify-between gap-2 border-b border-violet-100 bg-white/85 px-3 py-2 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/90 sm:min-h-20 sm:px-6">
+      <div className="flex min-w-0 items-center gap-2 sm:gap-4">
         <button
           type="button"
           onClick={onToggleSidebar}
@@ -48,11 +48,11 @@ const Header = ({ onAddTask, onToggleTheme, theme, onToggleSidebar, user, onLogo
         >
           <span aria-hidden="true">=</span>
         </button>
-        <div>
+        <div className="min-w-0 max-[430px]:hidden">
           <div className="flex flex-wrap items-center gap-2">
             <p className="text-lg font-black text-slate-950 dark:text-white sm:text-xl">MyTaskMate</p>
             <span className="hidden h-5 w-px bg-violet-100 dark:bg-slate-800 sm:block" />
-            <p className="text-sm font-black text-violet-600 dark:text-violet-300">
+            <p className="truncate text-sm font-black text-violet-600 dark:text-violet-300 max-sm:hidden">
               {pageNames[location.pathname] || 'MyTaskMate'}
             </p>
           </div>
@@ -63,7 +63,7 @@ const Header = ({ onAddTask, onToggleTheme, theme, onToggleSidebar, user, onLogo
         </div>
       </div>
 
-      <div className="flex items-center gap-1 sm:gap-2">
+      <div className="flex shrink-0 items-center gap-1 sm:gap-2">
         <button
           type="button"
           onClick={onToggleTheme}
@@ -91,7 +91,7 @@ const Header = ({ onAddTask, onToggleTheme, theme, onToggleSidebar, user, onLogo
         </button>
         <Link
           to="/profile"
-          className="rounded-full ring-2 ring-white dark:ring-slate-900"
+          className="rounded-full ring-2 ring-white dark:ring-slate-900 max-[360px]:hidden"
           title="Profile"
         >
           <Avatar avatar={user?.avatar} name={user?.displayName} />

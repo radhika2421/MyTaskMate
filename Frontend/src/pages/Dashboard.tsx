@@ -19,7 +19,7 @@ const Dashboard = () => {
     <div className="grid gap-7">
       <section className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h2 className="text-3xl font-black text-slate-950 dark:text-white">Your Daily Focus Space</h2>
+          <h2 className="text-2xl font-black text-slate-950 dark:text-white sm:text-3xl">Your Daily Focus Space</h2>
           <p className="mt-1 text-slate-500 dark:text-slate-400">Plan actions, protect focus blocks, and finish before deadlines.</p>
         </div>
       </section>

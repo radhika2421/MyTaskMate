@@ -36,7 +36,7 @@ const Tasks = () => {
   return (
     <div className="grid gap-7">
       <section>
-        <h2 className="text-3xl font-black text-slate-950 dark:text-white">Task Repository</h2>
+        <h2 className="text-2xl font-black text-slate-950 dark:text-white sm:text-3xl">Task Repository</h2>
         <p className="mt-1 text-slate-500 dark:text-slate-400">All tasks, completed work, overdue items, and pending next actions.</p>
       </section>
 

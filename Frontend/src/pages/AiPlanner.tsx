@@ -58,7 +58,7 @@ const AiPlanner = () => {
 
   return (
     <section className="flex min-h-[calc(100vh-9rem)] flex-col overflow-hidden rounded-lg border border-violet-100 bg-white/85 shadow-sm dark:border-slate-800 dark:bg-slate-900">
-      <div className="flex items-center justify-between border-b border-violet-100 px-5 py-4 dark:border-slate-800">
+      <div className="flex items-center justify-between border-b border-violet-100 px-4 py-4 dark:border-slate-800 sm:px-5">
         <div>
           <p className="text-sm font-black uppercase text-violet-600 dark:text-violet-300">AI coach and planner</p>
           <p className={`mt-1 text-xs font-bold ${connection === 'fallback' ? 'text-rose-600 dark:text-rose-300' : 'text-emerald-600 dark:text-emerald-400'}`}>
@@ -68,7 +68,7 @@ const AiPlanner = () => {
         <button type="button" onClick={() => setMessages(messages.slice(0, 1))} className="grid h-10 w-10 place-items-center rounded-lg border border-slate-200 text-slate-500 dark:border-slate-700" title="Clear conversation" aria-label="Clear conversation">x</button>
       </div>
 
-      <div className="flex-1 space-y-4 overflow-y-auto bg-[#fffdfb] p-5 dark:bg-slate-950/40">
+      <div className="flex-1 space-y-4 overflow-y-auto bg-[#fffdfb] p-4 dark:bg-slate-950/40 sm:p-5">
         {connectionMessage && (
           <p className="rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-bold text-rose-700 dark:border-rose-900 dark:bg-rose-950/30 dark:text-rose-300">
             {connectionMessage}
@@ -76,7 +76,7 @@ const AiPlanner = () => {
         )}
         {messages.map((message) => (
           <div key={message.id} className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-            <article className={`max-w-3xl whitespace-pre-wrap rounded-lg px-5 py-4 text-sm leading-7 ${message.role === 'user' ? 'bg-violet-600 text-white' : 'border border-violet-100 bg-white text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200'}`}>
+            <article className={`max-w-[90%] whitespace-pre-wrap rounded-lg px-4 py-3 text-sm leading-7 sm:max-w-3xl sm:px-5 sm:py-4 ${message.role === 'user' ? 'bg-violet-600 text-white' : 'border border-violet-100 bg-white text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200'}`}>
               {message.text}
             </article>
           </div>
@@ -85,7 +85,7 @@ const AiPlanner = () => {
       </div>
 
       <div className="border-t border-violet-100 p-4 dark:border-slate-800">
-        <div className="flex gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row">
           <textarea
             value={input}
             onChange={(event) => setInput(event.target.value)}
@@ -98,7 +98,7 @@ const AiPlanner = () => {
             className="min-h-14 flex-1 resize-none rounded-lg border border-slate-200 bg-transparent px-4 py-3 text-sm outline-none focus:border-violet-500 dark:border-slate-700"
             placeholder="A client call moved to 2 PM. Rebalance my afternoon."
           />
-          <button type="button" onClick={sendMessage} disabled={sending} className="h-14 rounded-lg bg-violet-600 px-5 font-black text-white disabled:opacity-60">Send</button>
+          <button type="button" onClick={sendMessage} disabled={sending} className="h-12 rounded-lg bg-violet-600 px-5 font-black text-white disabled:opacity-60 sm:h-14">Send</button>
         </div>
       </div>
     </section>

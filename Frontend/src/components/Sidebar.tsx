@@ -19,7 +19,7 @@ const Sidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) 
   return (
     <>
       {isOpen && <button type="button" onClick={onClose} className="fixed inset-0 z-20 bg-slate-950/45 lg:hidden" aria-label="Close navigation" />}
-      <aside className={`fixed inset-y-0 left-0 z-30 flex w-72 shrink-0 flex-col overflow-y-auto border-r border-violet-100 bg-white/95 px-5 py-5 shadow-2xl shadow-violet-100/60 backdrop-blur transition-transform dark:border-slate-800 dark:bg-slate-950/95 dark:shadow-none lg:sticky lg:inset-y-auto lg:left-auto lg:top-0 lg:h-screen lg:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+      <aside className={`fixed inset-y-0 left-0 z-30 flex w-[min(18rem,88vw)] shrink-0 flex-col overflow-y-auto border-r border-violet-100 bg-white/95 px-5 py-5 shadow-2xl shadow-violet-100/60 backdrop-blur transition-transform dark:border-slate-800 dark:bg-slate-950/95 dark:shadow-none lg:sticky lg:inset-y-auto lg:left-auto lg:top-0 lg:h-screen lg:w-72 lg:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
       <div className="flex items-start justify-between gap-3">
       <Link to="/dashboard" onClick={onClose} className="flex items-center gap-3">
         <img src={taskmateIcon} alt="" className="h-12 w-12 object-contain" />

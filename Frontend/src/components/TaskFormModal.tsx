@@ -58,8 +58,8 @@ const TaskFormModal = ({ isOpen, onClose, onCreated }: TaskFormModalProps) => {
   const field = (name: keyof typeof form, value: string | boolean) => setForm((current) => ({ ...current, [name]: value }))
 
   return (
-    <div className="fixed inset-0 z-50 grid place-items-center bg-slate-950/60 p-4">
-      <form onSubmit={submit} className="w-full max-w-xl rounded-lg bg-white p-6 shadow-2xl dark:bg-slate-950">
+    <div className="fixed inset-0 z-50 grid place-items-center overflow-y-auto bg-slate-950/60 p-3 sm:p-4">
+      <form onSubmit={submit} className="max-h-[calc(100svh-1.5rem)] w-full max-w-xl overflow-y-auto rounded-lg bg-white p-4 shadow-2xl dark:bg-slate-950 sm:max-h-[calc(100svh-2rem)] sm:p-6">
         <div className="flex items-start justify-between gap-4">
           <div>
             <h2 className="text-2xl font-black text-slate-950 dark:text-white">Add new task</h2>
@@ -105,7 +105,7 @@ const TaskFormModal = ({ isOpen, onClose, onCreated }: TaskFormModalProps) => {
           {error && <p className="rounded-lg bg-rose-50 px-4 py-3 text-sm font-bold text-rose-700 dark:bg-rose-950/30 dark:text-rose-300">{error}</p>}
         </div>
 
-        <div className="mt-6 flex justify-end gap-3">
+        <div className="mt-6 flex flex-col-reverse gap-3 min-[420px]:flex-row min-[420px]:justify-end">
           <button type="button" onClick={onClose} className="rounded-lg border border-slate-200 px-5 py-3 font-bold text-slate-600 dark:border-slate-800 dark:text-slate-300">Cancel</button>
           <button type="submit" disabled={saving} className="rounded-lg bg-violet-600 px-5 py-3 font-black text-white disabled:opacity-60">{saving ? 'Saving...' : 'Save task'}</button>
         </div>

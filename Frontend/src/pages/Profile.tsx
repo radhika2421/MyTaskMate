@@ -75,7 +75,7 @@ const Profile = () => {
         <div className="flex flex-wrap items-center justify-between gap-5">
           <div className="flex flex-wrap items-center gap-5">
             <Avatar avatar={user?.avatar} name={user?.displayName} className="h-24 w-24 text-3xl" />
-            <div><p className="text-sm font-black uppercase text-violet-500">Profile</p><h2 className="mt-1 text-3xl font-black text-slate-950 dark:text-white">{user?.displayName || 'Loading...'}</h2><p className="mt-1 text-slate-500 dark:text-slate-400">{user?.email}</p></div>
+            <div className="min-w-0"><p className="text-sm font-black uppercase text-violet-500">Profile</p><h2 className="mt-1 break-words text-2xl font-black text-slate-950 dark:text-white sm:text-3xl">{user?.displayName || 'Loading...'}</h2><p className="mt-1 break-all text-slate-500 dark:text-slate-400">{user?.email}</p></div>
           </div>
           <button type="button" onClick={() => { setEditing((value) => !value); setError(''); setSuccess('') }} className="rounded-lg border border-violet-200 px-5 py-3 font-black text-violet-700 dark:border-slate-700 dark:text-violet-200">{editing ? 'Cancel' : 'Edit profile'}</button>
         </div>

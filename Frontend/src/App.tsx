@@ -70,7 +70,7 @@ const AppShell = ({ children }: { children: ReactNode }) => {
             user={user}
             onLogout={logout}
           />
-          <main className="mx-auto max-w-7xl px-5 py-8 sm:px-8 lg:px-10">{children}</main>
+          <main className="mx-auto w-full max-w-7xl px-4 py-5 sm:px-6 sm:py-8 lg:px-10">{children}</main>
         </div>
       </div>
       <TaskFormModal

@@ -123,7 +123,7 @@ const GoalsView = () => {
   return (
     <div className="grid gap-7">
       <section className="flex flex-wrap items-end justify-between gap-4">
-        <div><h2 className="text-3xl font-black text-slate-950 dark:text-white">Milestone and Target Goals</h2><p className="mt-1 text-slate-500 dark:text-slate-400">Organize meaningful goals and capture daily evidence of progress.</p></div>
+        <div><h2 className="text-2xl font-black text-slate-950 dark:text-white sm:text-3xl">Milestone and Target Goals</h2><p className="mt-1 text-slate-500 dark:text-slate-400">Organize meaningful goals and capture daily evidence of progress.</p></div>
         <button type="button" onClick={() => setFormOpen((open) => !open)} className="rounded-lg bg-violet-500 px-5 py-3 font-black text-white">{formOpen ? 'Cancel' : 'New Goal'}</button>
       </section>
 

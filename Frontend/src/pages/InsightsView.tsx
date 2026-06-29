@@ -13,7 +13,7 @@ const InsightsView = () => {
   return (
     <div className="space-y-7">
       <div className="flex flex-wrap items-end justify-between gap-4">
-        <div><p className="text-sm font-black uppercase text-violet-600 dark:text-violet-300">Pattern intelligence</p><h2 className="mt-1 text-3xl font-black text-slate-950 dark:text-white">Productivity insights</h2><p className="mt-2 text-slate-500 dark:text-slate-400">Verified metrics and AI interpretation from your tasks, goals, habits, focus sessions, profile, and calendar.</p></div>
+        <div><p className="text-sm font-black uppercase text-violet-600 dark:text-violet-300">Pattern intelligence</p><h2 className="mt-1 text-2xl font-black text-slate-950 dark:text-white sm:text-3xl">Productivity insights</h2><p className="mt-2 text-slate-500 dark:text-slate-400">Verified metrics and AI interpretation from your tasks, goals, habits, focus sessions, profile, and calendar.</p></div>
         <button type="button" onClick={recalculate} disabled={loading} className="rounded-lg bg-violet-600 px-5 py-3 text-sm font-black text-white disabled:opacity-60">{loading ? 'Analysing...' : 'Recalculate with AI'}</button>
       </div>
 
